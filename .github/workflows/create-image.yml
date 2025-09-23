@@ -39,6 +39,5 @@ jobs:
             {
               "image_repo": "${{ secrets.DOCKER_USERNAME }}/nextcloud",
               "image_digest": "${{ needs.build.outputs.image_digest }}",
-              "git_sha": "${{ github.sha }}",
-              "username": "${{ secrets.DOCKER_USERNAME }}"
+              "git_sha": "${{ github.sha }}"
             }
