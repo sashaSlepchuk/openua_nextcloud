@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud:latest
+          tags: ${{ secrets.DOCKER_REGISTRY }}/nextcoud:latest
 
   dispatch:
     needs: build
