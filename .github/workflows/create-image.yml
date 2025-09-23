@@ -36,8 +36,12 @@ jobs:
           repository: ${{ secrets.INFRA_REPO }}
           event-type: deploy-nextcloud
           client-payload: >-
-            {
-              "image_repo": "docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud",
-              "image_digest": "${{ needs.build.outputs.image_digest }}",
-              "git_sha": "${{ github.sha }}",
-            }
+            ${{ toJson(
+              {
+                image_repo: format('docker.io/{0}/nextcloud-custom', secrets.DOCKER_USERNAME),
+                image_digest: needs.build.outputs.image_digest,
+                git_sha: github.sha,
+                environment: 'dev'
+              }
+            ) }}
+
