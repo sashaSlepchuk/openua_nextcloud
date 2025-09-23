@@ -24,7 +24,7 @@ jobs:
           context: .
           push: true
           tags: |
-            docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ github.sha }}
+#            docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ github.sha }}
             docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud:latest
 
   dispatch:
