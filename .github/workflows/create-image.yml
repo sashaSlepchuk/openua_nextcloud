@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_REGISTRY }}/nextcoud:latest
+          tags: ${{ secrets.DOCKER_REGISTRY }}/nextcloud:latest
 
   dispatch:
     needs: build
