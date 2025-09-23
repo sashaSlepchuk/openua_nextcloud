@@ -37,7 +37,7 @@ jobs:
           event-type: deploy-nextcloud
           client-payload: >-
             {
-              "image_repo": "docker.io/${{ secrets.DOCKER_USERNAME }}/nextcloud-custom",
+              "image_repo": "${{ secrets.DOCKER_USERNAME }}/nextcloud",
               "image_digest": "${{ needs.build.outputs.image_digest }}",
               "git_sha": "${{ github.sha }}",
               "environment": "dev"
