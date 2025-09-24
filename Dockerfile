@@ -8,6 +8,7 @@ RUN composer install
 COPY . .
 
 
+
 FROM node:20 AS frontend-build
 WORKDIR /src
 COPY . .

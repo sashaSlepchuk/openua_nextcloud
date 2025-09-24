@@ -1,0 +1,11 @@
+.git
+.github
+infra/
+node_modules/
+tests/
+docs/
+config/
+data/
+themes/
+3rdparty/
+core/vendor/
