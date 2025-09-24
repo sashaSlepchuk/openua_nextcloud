@@ -2,12 +2,9 @@ FROM composer:2 AS composer-build
 WORKDIR /src
 COPY composer.json composer.lock ./
 ENV COMPOSER_MEMORY_LIMIT=-1 COMPOSER_ALLOW_SUPERUSER=1
-RUN php -v && composer -V && composer diagnose || true
-RUN ls -la || true
-RUN composer install
+RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader \
+    --ignore-platform-reqs --no-scripts
 COPY . .
-
-
 
 FROM node:20 AS frontend-build
 WORKDIR /src
