@@ -2,7 +2,7 @@
 FROM composer:2 AS composer-build
 WORKDIR /src
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+RUN composer install
 COPY . .
 
 # 2) Node
