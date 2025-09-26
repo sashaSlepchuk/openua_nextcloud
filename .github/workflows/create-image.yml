@@ -25,6 +25,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_REGISTRY }}/nextcloud:latest
 
+
   dispatch:
     needs: build
     runs-on: ubuntu-latest
