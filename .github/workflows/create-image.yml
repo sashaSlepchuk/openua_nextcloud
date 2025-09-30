@@ -42,3 +42,4 @@ jobs:
               "image_digest": "${{ needs.build.outputs.image_digest }}",
               "git_sha": "${{ github.sha }}"
             }
+
