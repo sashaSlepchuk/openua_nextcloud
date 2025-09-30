@@ -25,9 +25,6 @@ try {
 
 export default defineConfig({
 	plugins: [vue()],
-	server: {
-		allowedHosts: ['meet.open.org.ua'],
-	},
 	test: {
 		include: ['{apps,core}/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
 		environment: 'jsdom',
