@@ -13,7 +13,7 @@ RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 RUN npm run build || true
 
 # 3) Final
-FROM nextcloud:33-apache
+FROM nextcloud:apache
 WORKDIR /usr/src/nextcloud
 COPY --chown=www-data:www-data --from=composer-build /src/ /usr/src/nextcloud/
 COPY --chown=www-data:www-data --from=frontend-build /src/core/js /usr/src/nextcloud/core/js
